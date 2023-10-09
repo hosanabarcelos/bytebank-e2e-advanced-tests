@@ -1,5 +1,5 @@
-describe('Jornadas de usuário', () => {
-  it('Deve permitir que a pessoa usuária acesse a aplicação, realize uma transação e faça um logout', () => {
+describe('User Journeys', () => {
+  it('it must allow the user to access the application, carry out a transaction and log out', () => {
     cy.visit('/');
 
     cy.getByData('botao-login').click();

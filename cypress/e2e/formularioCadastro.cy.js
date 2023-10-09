@@ -1,9 +1,9 @@
-describe('Formulário Cadastro', ()=>{
+describe('Registration Form', ()=>{
   beforeEach(()=>{
     cy.visit('http://localhost:3000')
   })
 
-  it('Usuário deve conseguir se cadastrar com sucesso', ()=>{
+  it('user must be able to register successfully', ()=>{
     cy.getByData('botao-cadastro').click()
     cy.getByData('nome-input').type('Gui Lima')
     cy.getByData('email-input').type('gui@email.com')

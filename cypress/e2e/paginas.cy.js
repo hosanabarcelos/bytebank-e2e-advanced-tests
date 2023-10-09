@@ -1,5 +1,5 @@
-describe('Testando múltiplas páginas', () => { 
-  it('Deve conseguir acessar a página de cartões', {browser: 'edge'}, ()=>{
+describe('Testing multiple pages', () => {
+  it('you should be able to access the cards page', {browser: 'edge'}, ()=>{
     cy.visit('/')
     cy.getByData('botao-login').click()
     cy.getByData('email-input').type('neilton@alura.com')

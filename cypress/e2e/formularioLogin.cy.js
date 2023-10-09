@@ -1,9 +1,9 @@
-describe('Formulario de Login', ()=>{
+describe('Login Form', ()=>{
   beforeEach(()=>{
     cy.visit('http://localhost:3000')
   })
 
-  it('Não deve permitir um email inválido', ()=>{
+  it('should not allow an invalid email', ()=>{
     cy.getByData('botao-login').click()
     cy.getByData('email-input').type('neilton@alura')
     cy.getByData('senha-input').type('123456')
@@ -11,7 +11,7 @@ describe('Formulario de Login', ()=>{
     cy.getByData('mensagem-erro').should('exist').and('have.text', 'O email digitado é inválido')
   })
 
-  it.only('Não deve permitir um campo em branco', ()=>{
+  it.only('should not allow a blank field', ()=>{
     cy.getByData('botao-login').click()
     cy.getByData('senha-input').type('123456')
     cy.getByData('botao-enviar').click()

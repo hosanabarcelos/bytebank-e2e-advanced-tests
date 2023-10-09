@@ -1,5 +1,5 @@
-describe('Testando dispositivos móveis', () => {
-  it('Deve existir um botão menu burguer', () => {
+describe('Testing mobile devices', () => {
+  it('there must be a burger menu button', () => {
     cy.visit('/');
 
     cy.getByData('botao-login').click();
