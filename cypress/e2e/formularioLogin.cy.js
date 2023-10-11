@@ -1,5 +1,17 @@
 describe('Login Form', ()=>{
-  it.only('access the home page', ()=>{
+    it.only('Access to home page', () => {
+        cy.fixture('users').then(user => {
+            cy.login(user[0].email, user[0].password);
+            cy.visit('/home')
+            cy.url().should('include', 'home')
+            cy.getByData('titulo-boas-vindas').should(
+                'contain',
+                'Bem vindo de volta!'
+            );
+            cy.contains(user[0].name).should('be.visible');
+        });
+    });
+  it('access the home page', ()=>{
     cy.login('alien@email.com', '123456');
     cy.visit('/home');
     cy.getByData('titulo-boas-vindas').should('contain', 'Bem vindo de volta!');
