@@ -1,11 +1,13 @@
+import { faker } from '@faker-js/faker';
+
 describe('SignUp user', () => {
     const user = {
-      name: 'Joao Mel',
-      email: 'joaomel@gmail.com',
-      password: 'joao123',
-    }
+        name: faker.name.fullName(),
+        email: faker.internet.email(),
+        password: faker.internet.password(),
+    };
 
-    it('Regiter user', () => {
+    it('regiter user', () => {
         cy.visit('/');
 
         cy.getByData('botao-cadastro').click();
