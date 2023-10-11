@@ -27,6 +27,12 @@ describe('Update user data', () => {
 
       cy.getByData('botao-salvar-alteracoes').should('not.be.disabled');
       cy.getByData('botao-salvar-alteracoes').click();
+
+      cy.on('window:alert', (alertText) => {
+        expect(alertText).to.equal('Alterações salvas com sucesso!');
+      });
+
+      cy.url().should('include', '/home');
     })
   });
 });
