@@ -1,9 +1,7 @@
 describe('Login Form', ()=>{
-  beforeEach(()=>{
-    cy.login('alien@email.com', '123456')
-  });
-
   it.only('access the home page', ()=>{
+    cy.login('alien@email.com', '123456');
+    cy.visit('/home');
     cy.getByData('titulo-boas-vindas').should('contain', 'Bem vindo de volta!');
   });
 
