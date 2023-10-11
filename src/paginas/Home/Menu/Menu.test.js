@@ -11,7 +11,7 @@ test('Deve renderizar o link para a página inicial', () => {
 test('Deve renderizar uma lista com quatro links', () => {
   render(<Menu />, { wrapper: BrowserRouter });
   const linksPaginaInicial = screen.getAllByRole('link');
-  expect(linksPaginaInicial).toHaveLength(4);
+  expect(linksPaginaInicial).toHaveLength(5);
 });
 
 test('Não deve renderizar o link de Extrato', () => {
