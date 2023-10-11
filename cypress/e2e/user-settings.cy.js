@@ -15,6 +15,18 @@ describe('Update user data', () => {
       cy.url().should('include', '/home');
 
       cy.contains(user[0].name).should('be.visible')
+
+      cy.getByData('app-home').find('a').eq(1).click();
+
+      cy.url().should('include', '/minha-conta');
+
+      cy.getByData('botao-salvar-alteracoes').should('be.disabled');
+
+      cy.get('[name = "nome"]').type(newUserdata.name);
+      cy.get('[name = "senha"]').type(newUserdata.password);
+
+      cy.getByData('botao-salvar-alteracoes').should('not.be.disabled');
+      cy.getByData('botao-salvar-alteracoes').click();
     })
   });
 });
