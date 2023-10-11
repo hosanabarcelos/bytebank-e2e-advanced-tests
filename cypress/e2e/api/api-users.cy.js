@@ -51,4 +51,19 @@ describe('Requests to API',() => {
            );
         });
     });
+
+    context('login API', () => {
+        it('user Alien login api', () => {
+            cy.request({
+                method: 'POST',
+                url: 'http://localhost:8000/users/login',
+                body: Cypress.env(),
+            }).then((response) => {
+                expect(response.status).to.eq(200);
+                expect(response.body).is.not.empty;
+                expect(response.body.user).to.have.property('nome');
+                expect(response.body.user.name).to.be.equal('Alienígena');
+            });
+        });
+    });
 });
