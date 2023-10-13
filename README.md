@@ -10,7 +10,7 @@ Com o **curso 04** da formação de testes automatizados, obtive todo o conhecim
 Conhecimentos adquiridos durante o desenvolvimento:
 - Mapear o que testar primeiro nas aplicações, priorizando os cenários críticos e depois focando em jornadas de usuário;
 - Criação de comandos personalizados para testes que necessitam de autenticação;
-- Uso de _session_ session para salvar as informações do usuário logado em cache;
+- Uso de _session_ para salvar as informações do usuário logado em cache;
 - Testes de métodos como o GET e o POST de uma API;
 - _Stubs_ como retorno de interceptações em testes de API;
 - Uso da biblioteca faker.js para gerar usuários fictícios;
